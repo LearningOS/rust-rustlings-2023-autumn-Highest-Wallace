@@ -40,7 +40,7 @@ pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
 fn result_with_list() -> Result<Vec<i32>, DivisionError> {
     let numbers = vec![27, 297, 38502, 81];
     // 此处也可以不注释类型，编译器可以自动推断
-    let division_results: Result<Vec<i32>, DivisionError> = numbers.into_iter().map(|n| divide(n, 27)).collect();
+    let division_results = numbers.into_iter().map(|n| divide(n, 27)).collect();
     division_results
 }
 
@@ -50,7 +50,7 @@ fn result_with_list() -> Result<Vec<i32>, DivisionError> {
 fn list_of_results() -> Vec<Result<i32, DivisionError>> {
     let numbers = vec![27, 297, 38502, 81];
     // 此处也可以不注释类型，编译器可以自动推断
-    let division_results: Vec<Result<i32, DivisionError>> = numbers.into_iter().map(|n| divide(n, 27)).collect();
+    let division_results = numbers.into_iter().map(|n| divide(n, 27)).collect();
     division_results
 }
 
